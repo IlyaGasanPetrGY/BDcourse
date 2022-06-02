@@ -1,0 +1,104 @@
+@mixin tablets {
+    @media screen and (max-width: 900px) {
+        @content;
+    }
+  }
+  @mixin phones {
+    @media screen and (max-width: 460px) {
+        @content;
+    }
+  }
+.section__form {
+    height: 100vh;
+    padding: 0;
+}
+.title__form__name__contact {
+    color: black;
+    background: rgba(255, 255, 255, 0.447);
+    padding: 0 1rem;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+
+}
+.container__hero__section__form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    color: black;
+    @include phones() {
+        width: 100%;
+    }
+}
+.container__form {
+    width: 100%;
+    height: 80vh;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    background: linear-gradient(45deg, rgba(192, 210, 243, 0.759), rgba(97, 175, 238, 0.3)), url(./../PNG/formbg.jpg); 
+    background-size: cover;
+    border-top-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    flex-direction: column;
+    align-items: center;
+    @include phones() {
+        padding: 1rem;
+    }
+    
+}
+.form__container {
+    width: 80%;
+    
+    display: flex;
+    justify-content: center;
+    @include phones() {
+        flex-direction: column;
+    }
+}
+.form__col {
+    margin-right: 1.2rem;
+    width: 30%;
+    &:nth-last-chil() {
+        margin-right: 0;
+    }
+    @include phones() {
+        width: 100%;
+    }
+
+}
+
+.input__form {
+    border: none;
+    height: 1.7rem;
+    width: 90%;
+    border-radius: 5px;
+    margin-bottom: 0.6rem;
+    &:focus {
+        border: rgb(85, 172, 99) 2px solid;
+        outline: none;
+    }
+    @include phones() {
+        width: 100%;
+    }
+}
+.textarea__row {
+    resize: none;
+    border: none;
+    width: 100%;
+    border-radius: 5px;
+    &:focus {
+        border: rgb(85, 172, 99) 2px solid;
+        outline: none;
+    }
+}
+.title__input {
+    font-size: 1.2rem;
+    margin-bottom: 0.6rem;
+    line-height: normal;
+}
+.button__form {
+    padding: .5rem 1.2rem;
+    background: rgb(56, 135, 224);
+    border-radius: 10px;
+    font-weight: bold;
+}
